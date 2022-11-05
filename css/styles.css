@@ -23,31 +23,69 @@
     --hover-btn-color: var(--color-blue);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+button {
+    cursor: pointer;
+}
+img {
+    display: block;
+    min-width: 100%;
+    height: auto;
+}
+
+
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--main-color);
 }
 
-.list { list-style: none;
-}
-
-.hide {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
+.visually-hiden {
     position: absolute;
     width: 1px;
-  }
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    width: 1200px;
+    padding: 0 15px;
+}
+
+.btn {
+    font-family: inherit;
+    border: none;
+}
 
 /*-----HEADER--------------*/
 
 .header a {
     text-decoration: none;
+}
+.header {
+    border-bottom: 1px solid #ECECEC;
+}
+.header-container {
+    display: flex;
+    align-items: center;
 }
 .logo {
     font-family: var(--font-ral);
@@ -64,17 +102,24 @@ body {
     color: var(--second-logo-color);
 }
 .nav-site {
+    margin-left: 93px;
 }
 .nav-site-list {
+    display: flex;
+    gap: 50px;
 }
 .nav-site-item {
 }
+
 .nav-site-link {
+    display: block;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--first-link-color);
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .nav-site-link:hover,
@@ -88,15 +133,21 @@ body {
 }
 
 .header-contacts-list {
+    display: flex;
+    margin-left: auto;
+    gap: 50px;
 }
 .header-contacts-item {
 }
 .header-contacts-link {
+    display: block;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    color: var(--color-gray)
+    color: var(--color-gray);
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .header-contacts-link:hover,
@@ -107,50 +158,59 @@ body {
 
 /*-----MAIN--------------*/
 
-/*-----Banner------------*/
+/*-----Hero------------*/
 
-.banner {
+.hero {
     background-color: var(--background-color-dark);
 }
-.banner-title {
+.hero-wrap {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    text-align: center;
+}
+.hero-title {
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-white);
+    margin-bottom: 30px;
 }
-.banner-btn {
+.hero-btn {
+    min-width: 216px;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
-    text-align: center;
     letter-spacing: 0.06em;
     background-color: var(--color-blue);
     color: var(--first-btn-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 10px 32px;
 }
 
-.banner-btn:hover,
-.banner-btn:focus,
-.banner-btn:active {
+.hero-btn:hover,
+.hero-btn:focus,
+.hero-btn:active {
     background-color: var(--color-blue-dark);
-}
-
-.btn {
-    font-family: inherit;
-    border: none;
-    cursor: pointer;
 }
 
 /*-----Features------------*/
 
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
 .features {
 }
 
 .features-list {
+    display: flex;
+    gap: 30px;
 }
 .features-item {
+    width: calc((100%-90px)/4);
 }
 .features-title {
     font-size: 14px;
@@ -158,6 +218,7 @@ body {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--title-color);
+    margin-bottom: 10px;
 }
 .features-text {
     font-size: 14px;
@@ -169,7 +230,9 @@ body {
 /*-----Works------------*/
 
 .works {
-}
+    padding-top: 0;
+}  
+
 .works-title {
     font-size: 36px;
     line-height: 1.17;
@@ -177,40 +240,53 @@ body {
     letter-spacing: 0.03em;
     color: var(--title-color);
 }
+.title {
+    margin-bottom: 50px;
+}
 .works-list {
+    display: flex;
+    gap: 30px;
 }
 .works-item {
+    width: calc((100%-60px)/3);
 }
 
 /*-----Team------------*/
 
 .team {
     background-color: var(--background-color-light);
+    text-align: center;
 }
 .team-title {
     font-size: 36px;
     line-height: 1.17;
-    text-align: center;
     letter-spacing: 0.03em;
     color: var(--title-color);
 }
 .team-list {
+    display: flex;
+    gap: 30px;
 }
-.team-item {
+.team-card {
+    width: calc((100%-90px)/4);
     background-color: var(--background-color-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
-.team-name {
+.card-padding {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.card-title {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--title-color);
-
+    margin-bottom: 10px;
 }
-.team-position {
+.card-text {
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
@@ -222,6 +298,8 @@ body {
 
 .footer {
     background-color: var(--background-color-dark);
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .footer a {
     text-decoration: none;
@@ -236,10 +314,16 @@ body {
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--color-white);
+    margin-top: 20px;
+}
+.address-text {
+    display: block;
+    margin-bottom: 9px;
 }
 .footer-list {
 }
-.footer-item {
+.footer-item:not(:first-child) {
+    margin-top: 9px;
 }
 .footer-link {
     color: var(--color-footer-link);
@@ -252,11 +336,11 @@ body {
 
 /*-----Portfolio--------------*/
 
-.portfolio {
-}
-.hide {
-}
 .portfolio-filters-list {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 34px;
 }
 .portfolio-filters-item {
 }
@@ -269,6 +353,7 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--second-btn-color);
+    padding: 6px 22px;
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus,
@@ -277,19 +362,27 @@ body {
     color: var(--first-btn-color)
 }
 .portfolio-projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 .portfolio-projects-item {
+    width: 370px;
     background-color: var(--background-color-white);
-    border: 1px solid #EEEEEE;
 }
 .portfolio-projects-link {
     text-decoration: none;
+}
+.portfolio-description {
+    padding: 20px 24px;
+    border: 1px solid #EEEEEE;
 }
 .portfolio-title {
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
     color: var(--title-color);
+    margin-bottom: 4px;
 }
 .portfolio-text {
     font-size: 16px;
